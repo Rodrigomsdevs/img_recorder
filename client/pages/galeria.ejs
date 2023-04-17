@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar - <%= dados.nome %>
+    </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/client/assets/css/styles.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('./includes/sidebar.ejs') %>
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">
+                            <%= (dados && dados.nome ?'Alterar - ' + dados.nome : 'Galeria') %>
+                        </h1>
+                        <button class="btn btn-dark d-md-none" id="toggle-sidebar" type="button">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+
+     
+                        <div class="col-md-12" <%= (dados && dados.nome ? '' : 'hidden') %>>
+
+                            <form action="/api/uploadImage" class="dropzone" id="myDropzone"></form>
+
+                        </div>
+                        <hr <%= (dados && dados.nome ? '' : 'hidden') %>/>
+            
+
+                    <!-- IMAGENS -->
+                    <div class="container-fluid mt-4">
+                        <div class="row" id="grid">
+
+                        </div>
+                    </div>
+
+                    <input id="id_filho" value="<%= (dados && dados.id ? dados.id : '') %>" hidden disabled readonly>
+                    <input type="file" id="cameraInput" capture="camera" accept="image/*" style="display:none;" hidden>
+
+                </main>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
+
+    <script src="/client/assets/js/geral.js"></script>
+    <script src="/client/assets/js/galeria.js"></script>
+</body>
+
+</html>

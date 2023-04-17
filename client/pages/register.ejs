@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login - Estilo Pinterest</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/client/assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>Cadastre-se</h1>
+            <form id="registerForm">
+                <label for="user">Nome completo:</label>
+                <input type="text" id="user" name="user" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                
+                <label for="senha_confirm">Confirme a senha:</label>
+                <input type="password" id="senha_confirm" name="senha_confirm" required>
+
+                <label for="data_nascimento">Data de nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+                <button type="submit" id="submit">Cadastrar</button>
+            </form>
+            <p>Já possui uma conta? <a href="/login">Faça login</a></p>
+        </div>
+    </div>
+
+    <script src="/client/assets/js/register.js"></script>
+</body>
+
+</html>
